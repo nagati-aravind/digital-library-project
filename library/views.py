@@ -102,11 +102,17 @@ def return_book(request, book_id):
 
     return redirect('book_detail', book_id=book.id)
 
+from django.contrib.auth.models import AnonymousUser
+
 def borrowing_history(request):
 
-    records = BorrowRecord.objects.filter(
-        member=request.user
-    )
+    if not request.user.is_authenticated:
+        records = BorrowRecord.objects.all()
+
+    else:
+        records = BorrowRecord.objects.filter(
+            member=request.user
+        )
 
     return render(
         request,
