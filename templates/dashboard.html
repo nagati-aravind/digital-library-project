@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container mt-5">
+
+    <h1>Library Dashboard</h1>
+
+    <div class="row mt-4">
+
+        <div class="col-md-3">
+            <div class="card p-3">
+                <h4>Total Books</h4>
+                <h2>{{ total_books }}</h2>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card p-3">
+                <h4>Total Authors</h4>
+                <h2>{{ total_authors }}</h2>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card p-3">
+                <h4>Total Categories</h4>
+                <h2>{{ total_categories }}</h2>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card p-3">
+                <h4>Borrow Records</h4>
+                <h2>{{ total_borrow_records }}</h2>
+            </div>
+            
+        </div>
+        <div class="col-md-3">
+            <div class="card p-3">
+                <h4>Active Borrows</h4>
+                <h2>{{ active_borrows }}</h2>
+            </div>
+        </div>
+
+
+    </div>
+
+</div>
+
+</body>
+</html>

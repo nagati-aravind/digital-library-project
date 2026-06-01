@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>{{ book.title }}</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    {% if messages %}
+    {% for message in messages %}
+    <div class="alert alert-success">
+        {{ message }}
+    </div>
+    {% endfor %}
+    {% endif %}
+
+<div class="container mt-5">
+    <a href="/" class="btn btn-secondary mb-3">Back to Books</a>
+
+    <h1>{{ book.title }}</h1>
+
+    <hr>
+
+    <p><strong>Author:</strong> {{ book.author }}</p>
+
+    <p><strong>Category:</strong> {{ book.category }}</p>
+
+    <p><strong>ISBN:</strong> {{ book.isbn }}</p>
+
+    <p><strong>Publication Year:</strong> {{ book.publication_year }}</p>
+
+    <p><strong>Available Copies:</strong> {{ book.available_copies }}</p>
+    <a href="{% url 'borrow_book' book.id %}"class="btn btn-primary">Borrow Book</a>
+    <a href="{% url 'return_book' book.id %}"class="btn btn-success">Return Book</a>
+
+    <p><strong>Description:</strong></p>
+
+    <p>{{ book.description }}</p>
+
+</div>
+
+</body>
+</html>
