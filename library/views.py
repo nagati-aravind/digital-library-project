@@ -50,7 +50,7 @@ def book_detail(request, book_id):
     )
 
 
-@login_required
+
 def borrow_book(request, book_id):
 
     book = get_object_or_404(Book, id=book_id)
@@ -70,7 +70,7 @@ def borrow_book(request, book_id):
     return redirect('book_detail', book_id=book.id)
 
 
-@login_required
+
 def return_book(request, book_id):
 
     book = get_object_or_404(Book, id=book_id)
@@ -101,7 +101,7 @@ def return_book(request, book_id):
         messages.success(request,'Book returned successfully!')
 
     return redirect('book_detail', book_id=book.id)
-@login_required
+
 def borrowing_history(request):
 
     records = BorrowRecord.objects.filter(
@@ -113,7 +113,6 @@ def borrowing_history(request):
         'history.html',
         {'records': records}
     )
-@login_required
 def dashboard(request):
 
     total_books = Book.objects.count()
